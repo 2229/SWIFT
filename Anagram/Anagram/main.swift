@@ -15,6 +15,7 @@ func anagram(words: [String]) -> [String: [String]] {
     for word in words {
         if var item = result[String(sorted(word))] {
             item.append(word)
+            result[String(sorted(word))] = item
         }
         else {
             result[String(sorted(word))] = [word]
