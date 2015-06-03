@@ -12,11 +12,11 @@ class LinkedList {
     var root : Node?
     
     func search(data: String) -> Node? {
-        return root!.search(data) ?? nil
+        return root?.search(data)
     }
     func add(data: String) {
-        if (root != nil) { root!.add(data) }
-        else { root = Node(data) }
+        if let root = self.root { root.add(data) }
+        else { self.root = Node(data) }
     }
 }
 
@@ -45,13 +45,14 @@ class Node: Printable {
 
 let linkedList = LinkedList()
 
-linkedList.add("google")
-linkedList.add("yahoo")
+
 linkedList.add("samsung")
+linkedList.add("yahoo")
+linkedList.add("google")
 linkedList.add("microsoft")
 linkedList.add("apple")
 
-println(linkedList.search("samsung"))
+println(linkedList.search("google"))
 
 
 
