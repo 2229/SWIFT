@@ -20,7 +20,7 @@ class LinkedList {
     }
 }
 
-class Node: Printable {
+class Node {
     var data: String
     var next: Node?
     
@@ -36,11 +36,13 @@ class Node: Printable {
         else if let nextNode = self.next { return nextNode.search(data) }
         else { return nil }
     }
-    
+}
+
+extension Node: Printable {
     var description : String {
         return "node: \(self.data)"
     }
-    
+
 }
 
 let linkedList = LinkedList()
