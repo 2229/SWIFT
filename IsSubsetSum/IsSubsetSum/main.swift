@@ -8,6 +8,27 @@
 
 import Foundation
 
+/*
+findValidSubsets(sum,arr,idx,currSolution):
+if (sum == 0):
+print currSolution
+if (sum < 0): //trim the search, it won't be succesful
+return
+//one possibility: don't take the current candidate
+findPermutations(sum,arr,idx+1,currSolution)
+
+//second poassibility: take the current candidate
+currSolution.add(arr[idx])
+findPermutations(sum-arr[idx],arr,idx+1,currSolution)
+
+//clean up before returning:
+currSolution.removeLast()
+
+
+*/
+
+
+
 func isSubsetSum(set: [Int], index: Int, sum: Int) ->Bool {
     if sum == 0 { return true }
     if sum != 0 && index == 0 { return false }
